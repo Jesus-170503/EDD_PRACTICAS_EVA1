@@ -7,11 +7,9 @@ package eva1_1_ejemplo_arreglos;
 
 import java.util.Scanner;
 
-
-
 /**
  *
- * @author moviles
+ * @author 3PY37LA_RS6
  */
 public class EVA1_1_EJEMPLO_ARREGLOS {
 
@@ -27,36 +25,40 @@ public class EVA1_1_EJEMPLO_ARREGLOS {
         //System.out.println("Numero de alumnos");
         //int y = input.nextInt();
         int[][] grupos=new int[x][];
+           
         
-        for (int i = 0; i < grupos.length; i++) {
-            System.out.println("Numero de alumnos");
+        for ( int i = 0; i < grupos.length; i++) {
+            System.out.println("Numero de alumnos del grupo: " + (i+1));
             int iEstu = input.nextInt();
             grupos[i] = new int[iEstu];
             for (int j = 0; j < grupos[i].length; j++) {
+                System.out.println("ingrese la calificacion numero: " + (j+1));
                 grupos[i][j]= input.nextInt();
-                
             }
         }
-        for (int i = 0; i < grupos.length; i++) {
+        
+        for ( int i = 0; i < grupos.length; i++) {
+             System.out.println("Las calificaciones de grupo numero " + (i+1) + " son:");
             for (int j = 0; j < grupos[i].length; j++) {
-                System.out.println("[" + grupos[i][j] + "]" );
+                System.out.print("[" + grupos[i][j] + "]" );
             }
             System.out.println("");
         }
         
+       /* for ( int i = 0; i < grupos.length; i++) {
+            for (int j = 0; j < grupos[i].length; j++) {
+                System.out.println("ingrese la calificacion numero: " + (j+1));
+                grupos[i][j]= input.nextInt();
+            }
+        }
         
-        /*int arregloCali[][];
-        
-        arregloCali = new int[5][];*/
-        
-        
-        
-        
-        
-        
+        for ( int i = 0; i < grupos.length; i++) {
+             System.out.println("Las calificaciones de grupo numero " + (i+1) + " son:");
+            for (int j = 0; j < grupos[i].length; j++) {
+                System.out.print("[" + grupos[i][j] + "]" );
+            }
+            System.out.println("");
+        }*/
     }
-    
-    
-    
     
 }
