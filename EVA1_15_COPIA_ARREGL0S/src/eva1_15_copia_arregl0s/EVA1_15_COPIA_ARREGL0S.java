@@ -28,16 +28,16 @@ public class EVA1_15_COPIA_ARREGL0S {
         System.out.println(arregloCopia);
         //Copia crear la copia de los valores
         
-        for (int i = 0; i < arregloDatos.length; i++) {
+      /*  for (int i = 0; i < arregloDatos.length; i++) {
             arregloCopia[i]= arregloDatos[i];
         }
-       imprimir(arregloCopia);
+       imprimir(arregloCopia);*/
         
-        /*for (int i = arregloDatos.length; arregloDatos.length > 0; i--) {
-            arregloCopia[i]=arregloDatos[i];
+        for (int i = 0; i < arregloDatos.length; i++) {
+            arregloCopia[i]=arregloDatos[(arregloDatos.length - 1)-i];
              }
         System.out.println("");
-      // imprimir(arregloCopia);*/
+      imprimir(arregloCopia);
     }
     public static void llenar ( int [] arreglo){// metodos y argumentos
         for (int i = 0; i < arreglo.length; i++) {
@@ -51,4 +51,6 @@ public class EVA1_15_COPIA_ARREGL0S {
             System.out.print("[" + arreglo[i] + "]");
         }
     }
-}
+    }
+    
+
