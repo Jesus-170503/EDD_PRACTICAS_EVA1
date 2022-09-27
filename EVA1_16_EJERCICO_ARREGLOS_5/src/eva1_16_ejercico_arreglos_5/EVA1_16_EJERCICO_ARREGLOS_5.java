@@ -21,17 +21,30 @@ public class EVA1_16_EJERCICO_ARREGLOS_5 {
         
         for ( int i = 0; i < arregloPares.length; i++) {
             arregloPares[i]=((int) (Math.random()*100) +1);
-                System.out.print(arregloPares[i] + " ");
+                System.out.print("[" + arregloPares[i] + "]");
             }
            System.out.println("");
-           
-        int [] arregloGuardar = new int[arregloPares.length]; // se hace una copia de simplemente las posiciones mas no de los valores como tal
-             
+
+         
+        int cont = 0; 
         for ( int i = 0; i < arregloPares.length; i++) {
         if (arregloPares[i]%2==0) {
-            arregloGuardar[i] =arregloPares[i];
-        System.out.print(arregloGuardar[i] + " ");
+            cont++;
             }
+        }
+        
+        System.out.println("Imprimimos la copia con el numero de arreglos");
+        
+        int [] arregloGuardar = new int [cont]; // hacemos una arreglo con la cantidad de pares de el otro arreglo, para asi poder hacer la copia
+        
+        int ini =0;
+        for (int i = 0; i < arregloPares.length; i++) {
+           if(arregloPares[i]%2==0){
+               arregloGuardar[ini]= arregloPares[i];
+               System.out.print("[" + arregloGuardar[ini] + "]");
+               ini++;
+           }
+           
         }
         
     }
