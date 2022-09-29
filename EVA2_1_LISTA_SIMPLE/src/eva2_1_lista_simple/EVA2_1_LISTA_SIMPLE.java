@@ -23,7 +23,7 @@ public class EVA2_1_LISTA_SIMPLE {
         for (int i = 0; i < 1000000; i++) {
             miLista.agregar(1000);
         }
-        System.out.println("conteo de nodos" +  miLista.tamaLista());
+        System.out.println("conteo de nodos " +  miLista.tamaLista());
         
         
         /*miLista.agregar(10);
