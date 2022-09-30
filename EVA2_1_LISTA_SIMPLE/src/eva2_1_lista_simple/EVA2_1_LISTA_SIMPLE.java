@@ -18,12 +18,40 @@ public class EVA2_1_LISTA_SIMPLE {
         // TODO code application logic here
         
         Lista miLista = new Lista();
-        //int [] arreglo = new int [1000000];
         
-        for (int i = 0; i < 1000000; i++) {
+        miLista.agregar(10);
+        miLista.agregar(20);
+        miLista.agregar(30);
+        miLista.agregar(40);
+        miLista.agregar(50);
+        miLista.agregar(60);
+        
+             miLista.imprimir();
+             
+        try{
+            miLista.insertarEn(70, 3);
+        }catch (Exception ex){
+           ex.printStackTrace();
+        }
+   
+        
+
+
+
+
+
+
+
+
+
+
+
+//int [] arreglo = new int [1000000];
+        
+       /* for (int i = 0; i < 1000000; i++) {
             miLista.agregar(1000);
         }
-        System.out.println("conteo de nodos " +  miLista.tamaLista());
+        System.out.println("conteo de nodos " +  miLista.tamaLista());*/
         
         
         /*miLista.agregar(10);

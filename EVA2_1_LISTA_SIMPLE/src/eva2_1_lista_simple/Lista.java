@@ -28,6 +28,7 @@ public class Lista {
                  
                 
             }
+       System.out.println("");
    }
     
     //agregar un nodo al final de la lista
@@ -73,7 +74,36 @@ public class Lista {
     
     
     
-    public void agregarEn(int valor, int posicion){
+    public void insertarEn(int valor, int pos) throws Exception{
+        
+        int cantNodos = tamaLista();
+        //que debemos valorar
+        //insertar una posicion no valida
+        //posiciones negativas 
+        //posiciones mayores a la cantidad de elementos
+        
+        if ( pos < 0)// posiciones negativas
+            throw new Exception("No puede insertarse un nodo en una posicion negativa");
+        else if (pos >= cantNodos )//posiciones mayores a la cantidad  de elementos
+        throw new Exception(pos + " no es una possicion valida en la lista");
+        else{
+            Nodo nuevoNodo = new Nodo(valor);
+            if(pos == 0){//insertar al inicio de la lista
+                nuevoNodo.setSiguiente(inicio);
+                inicio = nuevoNodo;
+            }else{
+                Nodo temp = inicio;
+                int cont = 0;
+                while(cont < (pos-1)){
+                
+                temp = temp.getSiguiente();
+                 cont++;
+                
+            }
+                System.out.print(temp.getValor() + " - ");
+            }
+            
+        }
         
     }
     
