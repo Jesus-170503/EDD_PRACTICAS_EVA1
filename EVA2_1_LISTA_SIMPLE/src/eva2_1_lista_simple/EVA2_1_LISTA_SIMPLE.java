@@ -26,7 +26,7 @@ public class EVA2_1_LISTA_SIMPLE {
         miLista.agregar(50);
         miLista.agregar(60);
         
-             miLista.imprimir();
+        miLista.imprimir();
              
         try{
             miLista.insertarEn(70, 3);
@@ -34,7 +34,9 @@ public class EVA2_1_LISTA_SIMPLE {
            ex.printStackTrace();
         }
    
-        
+        miLista.imprimir();
+        miLista.vaciarLista();
+        miLista.imprimir();
 
 
 

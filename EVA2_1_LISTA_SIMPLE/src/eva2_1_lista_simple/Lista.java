@@ -21,13 +21,16 @@ public class Lista {
     
     
    public void imprimir(){
+       if(inicio == null)
+           System.out.println("LISTA VACIA");
+       else{
        Nodo temp = inicio;
        while(temp != null){
           System.out.print(temp.getValor() + " - ");
                 temp = temp.getSiguiente();
-                 
-                
+ 
             }
+       }
        System.out.println("");
    }
     
@@ -91,7 +94,7 @@ public class Lista {
             if(pos == 0){//insertar al inicio de la lista
                 nuevoNodo.setSiguiente(inicio);
                 inicio = nuevoNodo;
-            }else{
+            }else{// insertar un nodo en una posicion
                 Nodo temp = inicio;
                 int cont = 0;
                 while(cont < (pos-1)){
@@ -100,11 +103,30 @@ public class Lista {
                  cont++;
                 
             }
-                System.out.print(temp.getValor() + " - ");
+                // y ahora??
+                nuevoNodo.setSiguiente(temp.getSiguiente());
+                temp.setSiguiente(nuevoNodo);
+                
             }
             
         }
         
     }
+    
+    public void vaciarLista(){
+        inicio=null;
+        fin=null;
+    }
+    public void borrarEn(int pos ) throws Exception{
+        int cantNodos = tamaLista();
+     if ( pos < 0)// posiciones negativas
+        throw new Exception("No puede insertarse un nodo en una posicion negativa");
+        else if (pos >= cantNodos )//posiciones mayores a la cantidad  de elementos
+        throw new Exception(pos + " no es una possicion valida en la lista");
+        else{   
+    
+        }
+        
+}
     
 }
