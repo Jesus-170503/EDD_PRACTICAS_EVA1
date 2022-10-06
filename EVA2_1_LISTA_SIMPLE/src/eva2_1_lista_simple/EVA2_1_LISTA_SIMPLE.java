@@ -33,11 +33,14 @@ public class EVA2_1_LISTA_SIMPLE {
         }catch (Exception ex){
            ex.printStackTrace();
         }
-   
         miLista.imprimir();
-        miLista.vaciarLista();
+        
+        try {
+            miLista.borrarEn(3);
+        } catch (Exception ex) {
+             ex.printStackTrace();
+        }
         miLista.imprimir();
-
 
 
 

@@ -124,9 +124,54 @@ public class Lista {
         else if (pos >= cantNodos )//posiciones mayores a la cantidad  de elementos
         throw new Exception(pos + " no es una possicion valida en la lista");
         else{   
-    
+        
+       if (cantNodos == 1 )     {
+           vaciarLista();
+       }else{
+           //Borrar el primer nodi
+           //borrar nodo intermedio
+           //borrar el ultimo nodo
+           if (pos == 0) {
+               inicio=inicio.getSiguiente();
+           }else{
+             Nodo temp = inicio;
+                int cont = 0;
+                while(cont < (pos-1)){
+                temp = temp.getSiguiente();
+                 cont++;
+                
+            }  
+                Nodo objSig = temp.getSiguiente();
+                temp.setSiguiente(objSig.getSiguiente());
+                if (pos==(cantNodos -1)){
+                    fin = temp;
+                }
+           }
+       }
+            
+            
+            
         }
         
 }
+    
+    
+    public int obtenValorEn(int pos) throws Exception{
+                int cantNodos = tamaLista();
+         if ( pos < 0)// posiciones negativas
+            throw new Exception("No puede insertarse un nodo en una posicion negativa");
+        else if (pos >= cantNodos )//posiciones mayores a la cantidad  de elementos
+        throw new Exception(pos + " no es una possicion valida en la lista");
+        else{
+             Nodo temp = inicio;
+                int cont = 0;
+                while(cont < (pos)){
+                temp = temp.getSiguiente();
+                 cont++;
+                
+            } 
+                
+        }
+    }
     
 }
