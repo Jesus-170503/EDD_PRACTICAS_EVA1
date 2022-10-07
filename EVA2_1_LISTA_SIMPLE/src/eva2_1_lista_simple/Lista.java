@@ -12,16 +12,26 @@ package eva2_1_lista_simple;
 public class Lista {
     private Nodo inicio;
     private Nodo fin;
+    private int cont;
     
     //por defaul, la lista se debe de encontrar vacia
     public Lista() {
         this.inicio = null;// no hay nodos en la lista 
         this.fin = null;
+        this.cont=0;
+    }
+    
+    public boolean estaVacia(){
+        if(inicio == null)
+            return true;
+        else 
+        return false;
     }
     
     
+    
    public void imprimir(){
-       if(inicio == null)
+       if(estaVacia())
            System.out.println("LISTA VACIA");
        else{
        Nodo temp = inicio;
@@ -62,17 +72,18 @@ public class Lista {
             fin = nuevoNodo;
             
         }
+        cont++;
         
     }
     
     public int tamaLista(){
-        int cont = 0;
+        /*int cont = 0;
         Nodo temp = inicio;
        while(temp != null){
           cont++;
           temp = temp.getSiguiente(); 
-            }
-        return cont; 
+            }*/
+        return this.cont; 
     }
     
     
@@ -108,7 +119,7 @@ public class Lista {
                 temp.setSiguiente(nuevoNodo);
                 
             }
-            
+            this.cont++;
         }
         
     }
@@ -116,6 +127,7 @@ public class Lista {
     public void vaciarLista(){
         inicio=null;
         fin=null;
+        cont=0;
     }
     public void borrarEn(int pos ) throws Exception{
         int cantNodos = tamaLista();
@@ -147,6 +159,7 @@ public class Lista {
                     fin = temp;
                 }
            }
+           this.cont--;
        }
             
             
@@ -158,6 +171,7 @@ public class Lista {
     
     public int obtenValorEn(int pos) throws Exception{
                 int cantNodos = tamaLista();
+                int Valor = 0;
          if ( pos < 0)// posiciones negativas
             throw new Exception("No puede insertarse un nodo en una posicion negativa");
         else if (pos >= cantNodos )//posiciones mayores a la cantidad  de elementos
@@ -170,8 +184,10 @@ public class Lista {
                  cont++;
                 
             } 
+                Valor = temp.getValor();
                 
         }
+         return Valor;
     }
     
 }
