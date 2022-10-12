@@ -16,6 +16,16 @@ public class EVA2_3_LISTA_DOBLE {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
+        ListaDoble listaDoble = new ListaDoble();
+        
+        listaDoble.agregar(10);
+        listaDoble.agregar(10);
+        listaDoble.agregar(10);
+        listaDoble.agregar(10);
+        listaDoble.agregar(10);
+        
     }
     
 }
