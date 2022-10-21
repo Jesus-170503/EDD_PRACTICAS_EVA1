@@ -10,7 +10,7 @@ package eva2_5_stack;
  * @author moviles
  */
 public class MyStack {
-     private Nodo inicio;
+    private Nodo inicio;
     private Nodo fin;
     private int cont;
     
@@ -75,6 +75,36 @@ public class MyStack {
         cont++;
         
     }
+     
+     
+     
+     public void push (int valor){ //agrega
+         agregar(valor);
+     }
+     
+     
+     public Integer peek(){
+            if (estaVacia()) {
+             return null;
+         }else{
+             return fin.getValor();
+             
+         }
+     }
+     
+      public Integer pop()throws Exception{   // lee
+         //verificar si la lista esta vacia
+         // si no esta la lista vacia, regresa el vaklor
+         if (estaVacia()) {
+             return null;
+         }else{
+             int valor = fin.getValor();
+             borrarEn(tamaLista() - 1);
+             return valor;
+         }
+         
+     }
+     
      
      public void insertarEn(int valor, int pos) throws Exception{  //Modificado
         

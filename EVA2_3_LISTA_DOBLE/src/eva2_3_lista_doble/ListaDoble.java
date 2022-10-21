@@ -135,15 +135,15 @@ public class ListaDoble {
            }else{
              Nodo temp = inicio;
                 int cont = 0;
-                while(cont < (pos)){
+                while(cont < (pos - 1)){
                 temp = temp.getSiguiente();
                  cont++;
                 
             }  
                 Nodo objSig = temp.getSiguiente();
                 temp.setSiguiente(objSig.getSiguiente());
-                Nodo objPrev = temp.getPrevio();
-                temp.setPrevio(objPrev.getSiguiente());
+               /* Nodo objPrev = temp.getPrevio();*/
+                temp.setPrevio(temp.getPrevio());
                 if (pos==(cantNodos -1)){
                     fin = temp;
                 }

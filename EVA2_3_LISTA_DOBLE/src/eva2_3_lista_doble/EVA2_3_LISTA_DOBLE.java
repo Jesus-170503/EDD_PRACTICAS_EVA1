@@ -40,7 +40,7 @@ public class EVA2_3_LISTA_DOBLE {
         listaDoble.imprimir();
         
         try {
-            listaDoble.borrarEn(1);
+            listaDoble.borrarEn(5);
         } catch (Exception ex) {
             Logger.getLogger(EVA2_3_LISTA_DOBLE.class.getName()).log(Level.SEVERE, null, ex);
         }
