@@ -16,6 +16,14 @@ public class EVA2_6_ARBOL_BINARIO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        ArbolBinario tree = new ArbolBinario();
+        
+        tree.agregar(10);
+        
+        
+        
+        
     }
     
 }
