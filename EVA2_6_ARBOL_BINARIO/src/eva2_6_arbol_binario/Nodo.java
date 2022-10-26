@@ -55,8 +55,4 @@ public class Nodo {
         this.valor = valor;
     }
 
-   
-    
-    
-    
 }
