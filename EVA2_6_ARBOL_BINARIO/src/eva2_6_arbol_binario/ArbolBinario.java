@@ -72,12 +72,49 @@ public class ArbolBinario {
         if(nodo != null){
             
             inOrderRecu(nodo.getIzquierda());
-            System.out.println(nodo.getValor() + " ");
+            System.out.print(nodo.getValor() + "-");
             inOrderRecu(nodo.getDerecha());
             
         }
         
     }
+    
+     public void posOrder(){
+        posOrderRecu(root);
+        System.out.println("");
+    }
+    private void posOrderRecu(Nodo nodo){
+        if(nodo != null){
+            
+            posOrderRecu(nodo.getIzquierda());
+            posOrderRecu(nodo.getDerecha());
+            System.out.print(nodo.getValor() + "-");
+            
+            
+        }
+        
+    }
+    
+      public void preOrder(){
+        preOrderRecu(root);
+        System.out.println("");
+    }
+    private void preOrderRecu(Nodo nodo){
+        if(nodo != null){
+            
+            System.out.print(nodo.getValor() + "-");
+            preOrderRecu(nodo.getIzquierda());
+            preOrderRecu(nodo.getDerecha());
+          
+            
+            
+        }
+        
+    }
+    
+    
+    //BORRAR NODOS DEL ARBOL
+    
     
     
 }
