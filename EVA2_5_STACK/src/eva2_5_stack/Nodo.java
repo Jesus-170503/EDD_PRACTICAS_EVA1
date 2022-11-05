@@ -7,10 +7,10 @@ package eva2_5_stack;
 
 /**
  *
- * @author moviles
+ * @author 3PY37LA_RS6
  */
 public class Nodo {
-    private int valor;
+     private int valor;
     private Nodo siguiente;
     private Nodo previo;
 
@@ -52,7 +52,4 @@ public class Nodo {
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }
-    
-    
-    
 }

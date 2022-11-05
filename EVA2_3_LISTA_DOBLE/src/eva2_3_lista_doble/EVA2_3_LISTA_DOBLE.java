@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author moviles
+ * @author 3PY37LA_RS6
  */
 public class EVA2_3_LISTA_DOBLE {
 
@@ -20,8 +20,7 @@ public class EVA2_3_LISTA_DOBLE {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        
-        ListaDoble listaDoble = new ListaDoble();
+          ListaDoble listaDoble = new ListaDoble();
         
         listaDoble.agregar(10);
         listaDoble.agregar(20);
@@ -40,13 +39,12 @@ public class EVA2_3_LISTA_DOBLE {
         listaDoble.imprimir();
         
         try {
-            listaDoble.borrarEn(5);
+            listaDoble.borrarEn(3);
         } catch (Exception ex) {
             Logger.getLogger(EVA2_3_LISTA_DOBLE.class.getName()).log(Level.SEVERE, null, ex);
         }
         
          listaDoble.imprimir();
-        
         
     }
     

@@ -7,10 +7,10 @@ package eva2_4_queue;
 
 /**
  *
- * @author moviles
+ * @author 3PY37LA_RS6
  */
 public class MyQueue {
-     private Nodo inicio;
+    private Nodo inicio;
     private Nodo fin;
     private int cont;
     
@@ -75,7 +75,6 @@ public class MyQueue {
         cont++;
         
     }
-     
      // lee, pero no borra el primer nodo de la lista 
      public Integer peek(){ 
          //verificar si la lista esta vacia
@@ -90,7 +89,7 @@ public class MyQueue {
      
         public Integer poll()throws Exception{
          //verificar si la lista esta vacia
-         // si no esta la lista vacia, regresa el vaklor
+         // si no esta la lista vacia, regresa el valor
          if (listaVacia()) {
              return null;
          }else{
@@ -132,7 +131,7 @@ public class MyQueue {
                 nuevoNodo.setSiguiente(temp);
                 nuevoNodo.setPrevio(temp.getPrevio());
                 temp.getPrevio().setSiguiente(nuevoNodo);
-               temp.setPrevio(nuevoNodo);
+                temp.setPrevio(nuevoNodo);
                 
                 
             }
@@ -141,7 +140,7 @@ public class MyQueue {
         
     }
      
-         public void borrarEn(int pos ) throws Exception{
+        public void borrarEn(int pos ) throws Exception{
         int cantNodos = tamaLista();
      if ( pos < 0)// posiciones negativas
         throw new Exception("No puede insertarse un nodo en una posicion negativa");
@@ -160,17 +159,24 @@ public class MyQueue {
            }else{
              Nodo temp = inicio;
                 int cont = 0;
-                while(cont < (pos - 1)){
+                while(cont < (pos)){
                 temp = temp.getSiguiente();
                  cont++;
                 
             }  
-                Nodo objSig = temp.getSiguiente();
+                /*Nodo objSig = temp.getSiguiente();
                 temp.setSiguiente(objSig.getSiguiente());
-               /* Nodo objPrev = temp.getPrevio();*/
-                temp.setPrevio(temp.getPrevio());
+                Nodo objPrev = temp.getPrevio();
+                temp.setSiguiente(objPrev.getPrevio());*/
+                Nodo objPrev = temp.getPrevio();
+                Nodo objSig = temp.getSiguiente();
+                objPrev.setSiguiente(objSig);
+                
+                
                 if (pos==(cantNodos -1)){
-                    fin = temp;
+                    fin = objPrev;
+                }else{
+                    objSig.setPrevio(objPrev);
                 }
            }
            this.cont--;
@@ -202,5 +208,8 @@ public class MyQueue {
         }
          return Valor;
     }
+    
+
+    
     
 }

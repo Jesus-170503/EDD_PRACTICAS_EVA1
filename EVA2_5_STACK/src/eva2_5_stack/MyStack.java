@@ -7,7 +7,7 @@ package eva2_5_stack;
 
 /**
  *
- * @author moviles
+ * @author 3PY37LA_RS6
  */
 public class MyStack {
     private Nodo inicio;
@@ -20,7 +20,7 @@ public class MyStack {
         this.fin = null;
         this.cont=0;
 }
-     public boolean estaVacia(){ //Copiada directamente
+     public boolean listaVacia(){ //Copiada directamente
         if(inicio == null)
             return true;
         else 
@@ -30,7 +30,7 @@ public class MyStack {
     
     
    public void imprimir(){ //Copiada directamente
-       if(estaVacia())
+       if(listaVacia())
            System.out.println("LISTA VACIA");
        else{
        Nodo temp = inicio;
@@ -75,16 +75,13 @@ public class MyStack {
         cont++;
         
     }
-     
-     
-     
-     public void push (int valor){ //agrega
+       public void push (int valor){ //agrega
          agregar(valor);
      }
      
      
      public Integer peek(){
-            if (estaVacia()) {
+            if (listaVacia()) {
              return null;
          }else{
              return fin.getValor();
@@ -95,7 +92,7 @@ public class MyStack {
       public Integer pop()throws Exception{   // lee
          //verificar si la lista esta vacia
          // si no esta la lista vacia, regresa el vaklor
-         if (estaVacia()) {
+         if (listaVacia()) {
              return null;
          }else{
              int valor = fin.getValor();
@@ -137,7 +134,7 @@ public class MyStack {
                 nuevoNodo.setSiguiente(temp);
                 nuevoNodo.setPrevio(temp.getPrevio());
                 temp.getPrevio().setSiguiente(nuevoNodo);
-               temp.setPrevio(nuevoNodo);
+                temp.setPrevio(nuevoNodo);
                 
                 
             }
@@ -146,7 +143,7 @@ public class MyStack {
         
     }
      
-         public void borrarEn(int pos ) throws Exception{
+        public void borrarEn(int pos ) throws Exception{
         int cantNodos = tamaLista();
      if ( pos < 0)// posiciones negativas
         throw new Exception("No puede insertarse un nodo en una posicion negativa");
@@ -165,17 +162,24 @@ public class MyStack {
            }else{
              Nodo temp = inicio;
                 int cont = 0;
-                while(cont < (pos - 1)){
+                while(cont < (pos)){
                 temp = temp.getSiguiente();
                  cont++;
                 
             }  
-                Nodo objSig = temp.getSiguiente();
+                /*Nodo objSig = temp.getSiguiente();
                 temp.setSiguiente(objSig.getSiguiente());
-               /* Nodo objPrev = temp.getPrevio();*/
-                temp.setPrevio(temp.getPrevio());
+                Nodo objPrev = temp.getPrevio();
+                temp.setSiguiente(objPrev.getPrevio());*/
+                Nodo objPrev = temp.getPrevio();
+                Nodo objSig = temp.getSiguiente();
+                objPrev.setSiguiente(objSig);
+                
+                
                 if (pos==(cantNodos -1)){
-                    fin = temp;
+                    fin = objPrev;
+                }else{
+                    objSig.setPrevio(objPrev);
                 }
            }
            this.cont--;
@@ -207,5 +211,4 @@ public class MyStack {
         }
          return Valor;
     }
-    
 }
