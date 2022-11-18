@@ -16,22 +16,31 @@ public class EVA3_1_ORDENAMIENTOS {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int [] arregloDatos = new int[100];
+        int [] arregloDatos = new int[15];
         int [] arregloSel = new int [arregloDatos.length];
+         int [] arregloins = new int [arregloDatos.length];
         System.out.println("Arreglo Original");
         llenar(arregloDatos);
-        //imprimir(arregloDatos);
+        imprimir(arregloDatos);
+        
         System.out.println("Selection Sort");
         copiar(arregloDatos, arregloSel);
-        //imprimir(arregloSel);
-        
+        imprimir(arregloSel);
         double ini = System.nanoTime();
         selectionSort(arregloSel);
         double fin = System.nanoTime();
-        //imprimir(arregloSel);
+        imprimir(arregloSel);
         System.out.println("Selection sort = " + (fin - ini));
         
-        
+        //*****************************************************
+        System.out.println("insertion Sort");
+        copiar(arregloDatos, arregloins);
+        imprimir(arregloins);
+        ini = System.nanoTime();
+        selectionSort(arregloins);
+        fin = System.nanoTime();
+        imprimir(arregloins);
+        System.out.println("insertion sort = " + (fin - ini));
         
     }
     //LLenar arreglo
@@ -80,6 +89,30 @@ public class EVA3_1_ORDENAMIENTOS {
             }
         }
     } 
+    
+    
+    public static void insertionSort(int [] arreglo){
+        for (int i = 1; i < arreglo.length; i++) {
+            int temp = arreglo[i]; // es lo que se va a trasladar hacia donde correponde 
+            int insP = i;
+            //BUSCAMOS EN QUE POSICIO DEBE DE QUEDAR TEMP
+            // ESA POSICION QUEDA ALMACENADA EN insP
+            for (int prev = i -1; prev >= 0; prev--) {//Comparar
+                if(arreglo[prev] > temp){
+                    //Swap (intercambio parcial)
+                    arreglo[insP] = arreglo[prev];
+                    insP--;
+                    
+                }else{
+                    break;
+                }
+                
+                
+            }
+            arreglo[insP] = temp;
+            
+        }
+    }
     
     
 }
